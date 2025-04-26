@@ -39,6 +39,9 @@ bool UserInput(string input) {
 
 	//если строка пустая - ввод некорректен
 	if (input.empty()) return false;
+	if (!UserInt(input)) {
+        return false; // Если строка содержит нецифровые символы, возвращаем false
+    }
 
 	//попытаться
 	try {
@@ -87,8 +90,9 @@ void enterNumber(int& varLink, string label)
 
 int CalcRectangleArea(int NumberA, int NumberB)
 {
-	return NumberA * NumberB;
+	return (NumberA * NumberB);
 }
+
 
 
 #endif
